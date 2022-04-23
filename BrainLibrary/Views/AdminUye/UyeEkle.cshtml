@@ -1,0 +1,51 @@
+﻿@model BrainLibrary.Models.Entity.Uyeler
+
+@{
+    ViewBag.Title = "UyeEkle";
+    Layout = "~/Views/Shared/AdminSide.cshtml";
+}
+
+<h2 style="text-align:center;font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; ">Üye Ekleme Paneli</h2>
+<br />
+
+<form method="post" class="form-group ms-2">
+    <div></div>
+    <div>
+        <label class="mt-2">Uye Adı</label>
+        <input type="text" name="Ad" class="form-control mt-2 " />
+    </div>
+    <div>
+        <label class="mt-2">Uye Soyad</label>
+        <input type="text" name="Soyad" class="form-control mt-2 " />
+    </div>
+    <div>
+        <label class="mt-2">Uye E-Mail</label>
+        <input type="email" name="Mail" class="form-control mt-2 " />
+    </div>
+    <div>
+        <label class="mt-2">Uye KullanıcıAdı</label>
+        <input type="text" name="KullaniciAdi" class="form-control mt-2 " />
+    </div>
+    <div>
+        <label class="mt-2">Uye Şifre</label>
+        <input type="password" name="Sifre" class="form-control mt-2 " />
+    </div>
+    <div>
+        <label class="mt-2">Uye Foto</label>
+        <input type="text" name="Sifre" class="form-control mt-2 " />
+    </div>
+    <div>
+        <label class="mt-2">Uye Telefon</label>
+        <input type="tel" name="Telefon" class="form-control mt-2 " />
+    </div>
+    <div>
+        <label class="mt-2">Uye Bölüm</label>
+        <input type="text" name="Bolum" class="form-control mt-2 " />
+    </div>
+
+
+    <div style="margin-top:15px;">
+        <button class="btn " style="background-color: #393E46; color:#fff;margin-bottom:70px;">Üye Ekle</button>
+    </div>
+</form>
+

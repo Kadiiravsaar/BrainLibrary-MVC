@@ -1,0 +1,44 @@
+.ilk-soz{
+    text-align: center;
+}
+
+.slider-cont{
+    margin-top: 40px;
+    
+}
+.owl-nav button {
+    position: absolute;
+    top: 50%;
+    margin: 0;
+    transition: all 0.3s ease-in-out;
+  }
+  .owl-nav button.owl-prev {
+    left: 0;
+    background-color: transparent !important;
+    color: white !important;
+  }
+  .owl-nav button.owl-next {
+    right: 0;
+    background-color: transparent !important;
+    color: white !important;
+  }
+  .owl-nav button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+  }
+
+.footer .about .boyut {
+    font-size: 30px !important;
+}
+
+.alt-span{
+     font-size: 36px;  
+     top: 0 !important;
+ }
+ .carousel-section-header .books-text-color a{
+     color: #393E46 ;
+ }
+ .carousel-section-header .books-text-color a:hover{
+    opacity: 0.8;
+}

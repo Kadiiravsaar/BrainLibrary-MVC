@@ -1,0 +1,50 @@
+﻿@using BrainLibrary.Models.Entity
+@model List<Hareketler>
+@{
+    ViewBag.Title = "Islem";
+    Layout = "~/Views/Shared/AdminSide.cshtml";
+}
+
+<h2 style="text-align: center; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; ">İadesi Alınan Kitaplar </h2>
+
+
+
+<div class="container">
+    <table class="table table-success table-striped  table-hover ms-1">
+        <thead>
+            <tr>
+                <th>İşlem ID</th>
+                <th>Kitap Adı</th>
+                <th>Üye</th>
+                <th>Personel</th>
+                <th>Alış Tarihi</th>
+                <th>İade Tarihi</th>
+                <th>Kitap İade</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var hrkt in Model)
+            {
+                <tr>
+                    <th>@hrkt.ID</th>
+                    <td>@hrkt.Kitaplar.Ad</td>
+                    <td>@hrkt.Uyeler.Ad&nbsp;@hrkt.Uyeler.Soyad</td>
+                    <td>@hrkt.Personeller.Personel</td>
+                    <td>@Convert.ToDateTime(hrkt.AlisTarih).ToString("dd/MM/yyyy")</td>
+                    <td>@Convert.ToDateTime(hrkt.UyeGetirTarih).ToString("dd/MM/yyyy")</td>
+                    <td><a href="/AdminOdunc/Odunciade/@hrkt.ID" class="btn ms-1 " style="background-color: #393E46; color:#fff;">Detaylar</a></td>
+
+                </tr>
+
+            }
+
+
+        </tbody>
+
+    </table>
+
+</div>
+
+
+

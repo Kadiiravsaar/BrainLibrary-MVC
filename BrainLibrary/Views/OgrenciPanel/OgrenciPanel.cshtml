@@ -1,0 +1,318 @@
+﻿@model BrainLibrary.Models.Entity.Uyeler
+
+@{
+
+    ViewBag.Title = "OgrenciPanel";
+
+    Layout = "~/Views/Shared/OgrenciPanelLayout.cshtml";
+
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>BrainLbirary</title>
+
+    <!-- Tell the browser to be responsive to screen width -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+
+    <!-- Ionicons -->
+
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+
+    <!-- Theme style -->
+
+    <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+
+    <!-- Google Font: Source Sans Pro -->
+
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+</head>
+
+<body class="hold-transition sidebar-mini">
+
+    <section class="content-header">
+
+        <div class="container-fluid">
+
+            <div class="row mb-2">
+
+                <div class="col-sm-6">
+
+                    <h1>Profil</h1>
+
+                </div>
+
+                <div class="col-sm-6">
+
+
+                </div>
+
+            </div>
+
+        </div><!-- /.container-fluid -->
+
+    </section>
+
+
+
+    <!-- Main content -->
+
+    <section class="content">
+
+        <div class="container-fluid">
+
+            <div class="row">
+
+                <div class="col-md-3">
+
+
+
+                    
+
+                    <div class="card card-primary card-outline">
+
+                        <div class="card-body box-profile">
+
+                          
+
+
+
+                            <h3 class="profile-username text-center">@ViewBag.d1</h3>
+
+
+
+                            <p class="text-muted text-center">@ViewBag.b1</p>
+
+
+
+                            <ul class="list-group list-group-unbordered mb-3">
+
+                                <li class="list-group-item">
+
+                                    <b>Ödünç Aldığım Kitap Sayısı</b> <a class="float-right">@ViewBag.d2</a>
+
+                                </li>
+
+                                <li class="list-group-item">
+
+                                    <b>Gelen Mesajlar</b> <a class="float-right">@ViewBag.d3</a>
+
+                                </li>
+
+                                <li class="list-group-item">
+
+                                    <b>Gönderilen Mesajlar</b> <a class="float-right">@ViewBag.d4</a>
+
+                                </li>
+
+                            </ul>
+
+
+
+                            <a href="/Mesajlar/Index/" class="btn btn-primary btn-block"><b>Gelen Kutusu</b></a>
+
+                        </div>
+
+                        <!-- /.card-body -->
+
+                    </div>
+
+                    <!-- /.card -->
+                    <!-- About Me Box -->
+
+                  
+
+                </div>
+
+                <!-- /.col -->
+
+                <div class="col-md-9">
+
+                    <div class="card">
+
+                        <div class="card-header p-2">
+
+                            <ul class="nav nav-pills">
+
+                                <li class="nav-item"><a class="nav-link active " href="#settings" data-toggle="tab">Ayarlar</a></li>
+
+                            </ul>
+
+                        </div>
+
+                        <div class="card-body">
+
+                            <div class="tab-content">
+
+                                <div class="active tab-pane" id="activity">
+                                    <div class="tab-pane" id="settings">
+
+                                        @using (Html.BeginForm("OgrenciPanel2", "OgrenciPanel", FormMethod.Post))
+
+                                        {
+
+                                            <form class="form-horizontal">
+
+                                                <div class="form-group row">
+
+                                                    <label for="inputName" class="col-sm-2 col-form-label">Ad</label>
+
+                                                    <div class="col-sm-10">
+
+                                                        @Html.TextBoxFor(x => x.Ad, new { @class = "form-control" })
+
+                                                    </div>
+
+                                                </div>
+
+                                                <div class="form-group row">
+
+                                                    <label for="inputName" class="col-sm-2 col-form-label">Soyad</label>
+
+                                                    <div class="col-sm-10">
+
+                                                        @Html.TextBoxFor(x => x.Soyad, new { @class = "form-control" })
+
+                                                    </div>
+
+                                                </div>
+
+                                                <div class="form-group row">
+
+                                                    <label for="inputName" class="col-sm-2 col-form-label">Kullanıcı Adı</label>
+
+                                                    <div class="col-sm-10">
+
+                                                        @Html.TextBoxFor(x => x.KullaniciAdi, new { @class = "form-control" })
+
+                                                    </div>
+
+                                                </div>
+
+                                                <div class="form-group row">
+
+                                                    <label for="inputName" class="col-sm-2 col-form-label">Şifre</label>
+
+                                                    <div class="col-sm-10">
+
+                                                        @Html.TextBoxFor(x => x.Sifre, new { @class = "form-control" })
+
+                                                    </div>
+
+                                                </div>
+
+                                                <div class="form-group row">
+
+                                                    <label for="inputName" class="col-sm-2 col-form-label">Fotoğraf</label>
+
+                                                    <div class="col-sm-10">
+
+                                                        @Html.TextBoxFor(x => x.Fotograf, new { @class = "form-control" })
+
+                                                    </div>
+
+                                                </div>
+
+                                                <div class="form-group row">
+
+                                                    <label for="inputName" class="col-sm-2 col-form-label">Okul</label>
+
+                                                    <div class="col-sm-10">
+
+                                                        @Html.TextBoxFor(x => x.Bolum, new { @class = "form-control" })
+
+                                                    </div>
+
+
+                                                </div>
+                                                <div class="form-group row">
+
+                                                    <label for="inputName" class="col-sm-2 col-form-label">Telefon</label>
+
+                                                    <div class="col-sm-10">
+
+                                                        @Html.TextBoxFor(x => x.Telefon, new { @class = "form-control" })
+
+                                                    </div>
+
+                                                </div>
+
+
+
+                                                <div class="form-group row">
+
+                                                    <div class="offset-sm-2 col-sm-10 mt-2">
+
+                                                        <button type="submit" class="btn btn-danger">Güncelle</button>
+
+                                                    </div>
+
+                                                </div>
+
+                                            </form>
+
+                                        }
+
+                                    </div>
+                                </div>
+
+                             
+                            </div>
+
+                          
+
+                        </div>
+
+                    </div>
+
+                 
+
+                </div>
+
+               
+
+            </div>
+
+            
+
+        </div>
+
+    </section>
+
+
+    <footer style="text-align:center;">
+
+
+        <strong>Copyright &copy; 2021-2022 - BrainLibrary </strong> 
+
+    </footer>
+
+
+    <script src="../../plugins/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap 4 -->
+
+    <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- AdminLTE App -->
+
+    <script src="../../dist/js/adminlte.min.js"></script>
+
+    <!-- AdminLTE for demo purposes -->
+
+    <script src="../../dist/js/demo.js"></script>
+
+</body>
+
+</html>

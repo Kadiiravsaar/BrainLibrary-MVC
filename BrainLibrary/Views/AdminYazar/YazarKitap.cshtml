@@ -1,0 +1,28 @@
+﻿@using BrainLibrary.Models.Entity
+@model List<Kitaplar>
+@{
+    ViewBag.Title = "YazarKitap";
+    Layout = "~/Views/Shared/AdminSide.cshtml";
+}
+
+<h2 style="text-align:center;font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; ">Yazar Kitapları</h2>
+<br />
+<table class="table table-success table-striped  table-hover ms-1 ">
+    <tr>
+        <th>ID</th>
+        <th>Kitap Adı</th>
+        <th>Kategori</th>
+        <th>Yayınevi</th>
+    </tr>
+    @foreach (var lst in Model)
+    {
+        <tr>
+            <td>@lst.ID</td>
+            <td>@lst.Ad</td>
+            <td>@lst.Kategoriler.Ad</td>
+            <td>@lst.YayinEvi</td>
+        </tr>
+
+    }
+</table>
+

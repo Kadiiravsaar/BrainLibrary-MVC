@@ -1,0 +1,47 @@
+﻿
+@using BrainLibrary.Models.Entity
+@model List<Adminler>
+@{
+    ViewBag.Title = "Ayarlar";
+    Layout = "~/Views/Shared/AdminSide.cshtml";
+}
+
+<h2 style="text-align: center; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; ">Kategoriler</h2>
+<br />
+
+<div class="container">
+    <table class="table table-success table-striped  table-hover ms-1 ">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Kullanıcı Adı:</th>
+                <th>Yetki</th>
+                <th>Sil</th>
+                <th>Güncelle</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var adm in Model)
+            {
+                <tr>
+                    <th>@adm.ID</th>
+                    <td>@adm.Kullanici</td>
+                    <td>@adm.Yetki</td>
+                    <td><a href="/Ayarlar/AdminSil/@adm.ID" class="btn btn-danger"> <i class="fas fa-trash-alt"></i> Sil</a></td>
+                    <td><a href="/Ayarlar/AdminGuncelle/@adm.ID" class="btn btn-success"><i class="fas fa-pencil-alt"></i> Güncelle</a></td>
+                </tr>
+
+            }
+
+
+        </tbody>
+
+    </table>
+    <a href="/Ayarlar/YeniAdmin/" class="btn ms-1 mb-4 " style="background-color: #393E46; color:#fff;">Yeni Admin Ekle</a>
+
+</div>
+
+
+
+
+

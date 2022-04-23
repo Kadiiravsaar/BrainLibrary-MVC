@@ -1,0 +1,37 @@
+﻿@using BrainLibrary.Models.Entity
+@model List<Mesajlar>
+@{
+    ViewBag.Title = "MesajGoruntu2";
+    Layout = "~/Views/Shared/OgrenciPanelLayout.cshtml";
+}
+@foreach (var y in Model)
+{
+    <div class="col-md-12">
+        <div class="card card-primary card-outline">
+            <div class="card-header">
+                <h3 class="card-title">Giden Mail</h3>
+            </div>
+
+            <div class="card-body p-0">
+                <div class="mailbox-read-info">
+                    <h6>
+                        Kimden:  <strong> @y.Alıcı</strong>
+                        <span class="mailbox-read-time float-right">@y.Tarih</span>
+                    </h6>
+                </div>
+
+                <div class="mailbox-read-message">
+
+                    <p>
+                        @y.Icerik
+
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+
+

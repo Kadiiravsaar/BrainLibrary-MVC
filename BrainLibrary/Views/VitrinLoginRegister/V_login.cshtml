@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "V_login";
+    Layout = "~/Views/VitrinLoginRegister/V_LoginRegister.cshtml";
+}
+@using (Html.BeginForm("V_login", "VitrinLoginRegister", FormMethod.Post))
+{
+
+    <div class="form-box">
+        <div class="header-text">
+            Öğrenci Giriş Formu
+        </div>
+        <input placeholder="Email Giriniz" name="Mail" type="text">
+        <input placeholder="Şifre Giriniz" name="Sifre" type="password">
+        <button class="girisbtn">Giriş Yap</button>
+    </div>
+
+}

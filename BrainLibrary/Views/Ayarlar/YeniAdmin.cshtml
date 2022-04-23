@@ -1,0 +1,28 @@
+﻿@model BrainLibrary.Models.Entity.Adminler
+@{
+    ViewBag.Title = "YeniAdmin";
+    Layout = "~/Views/Shared/AdminSide.cshtml";
+}
+<h2 style="text-align:center;font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; ">Yeni Admin Ekleme Paneli</h2>
+<br />
+
+<form method="post" class="form-group ms-2">
+    <div></div>
+    <div>
+        <label class="mt-2">Kullanıcı Adı</label>
+        <input type="text" name="Kullanici" class="form-control mt-2 " />
+    </div>
+    <div>
+        <label class="mt-2">Şifre</label>
+        <input type="text" name="Sifre" class="form-control mt-2 " />
+    </div>
+    <div>
+        <label class="mt-2">Yetki </label>
+        <input type="text" name="Yetki" class="form-control mt-2 " />
+    </div>
+    <div style="margin-top:15px;">
+        <button class="btn " style="background-color: #393E46; color:#fff;">Admin Ekle</button>
+    </div>
+</form>
+
+

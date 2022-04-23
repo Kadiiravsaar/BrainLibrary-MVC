@@ -1,0 +1,19 @@
+.uye {
+    background: #fc3955;
+    color: #ffffff;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    padding: 12px 60px;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 16px;
+    margin-top:200px;
+    margin-left:650px;
+}
+
+    .uye:hover {
+        background-color: #00BCD4;
+        transition-duration: 5s;
+    }

@@ -1,0 +1,22 @@
+﻿@model BrainLibrary.Models.Entity.Kategoriler
+@{
+    ViewBag.Title = "KategoriGetir";
+    Layout = "~/Views/Shared/AdminSide.cshtml";
+}
+
+@using (Html.BeginForm("KategoriGuncelle", "AdminKategori", FormMethod.Post)) 
+{ 
+
+    <div class="form-group ms-2">
+        @Html.LabelFor(k=>k.ID)
+        @Html.TextBoxFor(k=>k.ID, new { @class= "form-control"})
+        <br />
+        @Html.LabelFor(k=>k.Ad)
+        @Html.TextBoxFor(k=>k.Ad, new { @class= "form-control"})
+    </div>
+    <div>
+        <button class="btn btn-warning ms-2 mt-2" >Güncelle</button>
+    </div>
+
+}
+

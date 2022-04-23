@@ -1,0 +1,45 @@
+﻿@model BrainLibrary.Models.Entity.Kitaplar
+@{
+    ViewBag.Title = "KitapGetir";
+    Layout = "~/Views/Shared/AdminSide.cshtml";
+}
+
+<h2>KitapGetir</h2>
+
+
+@using (Html.BeginForm("KitapGuncelle", "AdminKitap", FormMethod.Post))
+{
+
+<div class="form-group ms-2">
+    @Html.LabelFor(k => k.ID)
+    @Html.TextBoxFor(k => k.ID, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(k => k.Ad)
+    @Html.TextBoxFor(k => k.Ad, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(k => k.Kategori)
+    @Html.DropDownListFor(k => k.Kategoriler.ID, (List<SelectListItem>)ViewBag.ctgry1, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(k => k.Yazar)
+    @Html.DropDownListFor(k => k.Yazarlar.ID, (List<SelectListItem>)ViewBag.wrtr1, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(k => k.BasimYil)
+    @Html.TextBoxFor(k => k.BasimYil, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(k => k.YayinEvi)
+    @Html.TextBoxFor(k => k.YayinEvi, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(k => k.Sayfa)
+    @Html.TextBoxFor(k => k.Sayfa, new { @class = "form-control" })
+    <input type="hidden" name="Durum" value="True" />
+
+
+
+</div>
+    <div>
+        <button class="btn btn-warning ms-2 mt-4 mb-4">Güncelle</button>
+    </div>
+
+}
+
+

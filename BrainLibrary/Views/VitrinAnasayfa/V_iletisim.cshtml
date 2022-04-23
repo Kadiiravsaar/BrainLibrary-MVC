@@ -1,0 +1,66 @@
+﻿
+@{
+    ViewBag.Title = "V_iletisim";
+    Layout = "~/Views/VitrinLoginRegister/V_LoginRegister.cshtml";
+}
+
+@{
+    ViewBag.Title = "V_iletisim";
+    Layout = "~/Views/Shared/VitrinLayout.cshtml";
+}
+
+<div class="container map">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6582.164368856256!2d26.633141267289197!3d40.85133480076976!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14b3c7faa898ca01%3A0x5d5fd5d5ba7af4c7!2sKe%C5%9Fan%20Devlet%20Di%C5%9F%20Hastanesi!5e0!3m2!1str!2str!4v1645528964947!5m2!1str!2str"
+            width="1300" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+</div>
+
+<h3 class="text-uppercase books-title-iletsm ">İletişim</h3>
+<div class="line">
+    <hr>
+    <i class="fas fa-star line-icon-ilet"></i>
+</div>
+<br>
+<div class="container">
+
+    <div class="row ilet">
+        <div class="col-lg-4 col-md-4 col-sm-4">
+            <i class="fas fa-location-arrow"></i>
+            <p>Edirne, Keşan</p>
+            <i class="fas fa-phone-alt"></i>
+            <p> (0284) 555 555 55 </p>
+            <i class="fas fa-mail-bulk"></i>
+            <p>Yusufcapraz@gmail.com</p>
+        </div>
+        <div class="col-lg-8 col-md-8 col-sm-8">
+            @using (Html.BeginForm("V_iletisim", "VitrinAnasayfa", FormMethod.Post))
+            {
+
+
+            <form class="formlar">
+                <div class="input-group">
+                    <input type="text" name="Ad" id="name" required>
+                    <label for="name"><i class="fas fa-user"></i> Adınız: </label>
+                </div>
+                <div class="input-group">
+                    <input type="text" name="Telefon" id="Number" required>
+                    <label for="Number"> <i class="fas fa-phone-alt"></i> Telefon numarası: </label>
+                </div>
+                <div class="input-group">
+                    <input type="email" name="Mail" id="email" required>
+                    <label for="email"><i class="fas fa-envelope"></i> E-mail: </label>
+                </div>
+                <div class="input-group">
+                    <textarea id="message" name="Mesaj" rows="3" cols="5" required></textarea>
+                    <label for="message"><i class="fas fa-comment"></i> Mesajınız: </label>
+                </div>
+                <button class="butonilet">
+                    Gönder
+                </button>
+            </form>
+            }
+        </div>
+    </div>
+</div>
+
+
+

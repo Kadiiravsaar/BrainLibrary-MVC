@@ -1,0 +1,43 @@
+﻿@model BrainLibrary.Models.Entity.Hareketler
+@{
+    ViewBag.Title = "Oduncver";
+    Layout = "~/Views/Shared/AdminSide.cshtml";
+}
+
+<h2 style="text-align:center;font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; ">Ödünç Verme Paneli</h2>
+<br />
+
+<form method="post" class="form-group ms-2">
+    <div></div>
+    <div>
+        <label class="mt-2">Üye Adı </label>
+        @Html.DropDownListFor(k => k.Uyeler.ID, (List<SelectListItem>)ViewBag.ua, new { @class = "form-control mt-2" })
+        @*<input type="text" name="Uye" class="form-control mt-2 " />*@
+    </div>
+    <div>
+        <label class="mt-2">Kitap Adı</label>
+        @Html.DropDownListFor(k => k.Kitaplar.ID, (List<SelectListItem>)ViewBag.ktpad, new { @class = "form-control mt-2" })
+
+        @*<input type="text" name="Kitap" class="form-control mt-2 " />*@
+    </div>
+    <div>
+        <label class="mt-2">Personel Adı</label>
+        @Html.DropDownListFor(k => k.Personeller.ID, (List<SelectListItem>)ViewBag.persad, new { @class = "form-control mt-2" })
+        @*<input type="text" name="Personel" class="form-control mt-2 " />*@
+    </div>
+    <div>
+        <label class="mt-2">Kitap Alış Tarihi </label>
+        <input type="text" name="AlisTarih" class="form-control mt-2 " value="@DateTime.Now.ToShortDateString()" />
+    </div>
+    <div>
+        <label class="mt-2">Kitap İade Tarihi</label>
+        <input type="text" name="IadeTarih" class="form-control mt-2 " value="@DateTime.Now.AddDays(2).ToShortDateString()" />
+
+    </div>
+
+
+    <div style="margin-top:15px;">
+        <button class="btn " style="background-color: #393E46; color:#fff;margin-bottom:70px;">Kitap Ödünç Ver</button>
+        <input type="hidden" name="IslemDurum" value="False" />
+    </div>
+</form>

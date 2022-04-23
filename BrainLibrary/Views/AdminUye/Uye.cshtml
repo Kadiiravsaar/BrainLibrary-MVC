@@ -1,0 +1,72 @@
+﻿@using BrainLibrary.Models.Entity
+@using PagedList
+@using PagedList.Mvc
+
+@model PagedList.IPagedList<Uyeler>
+
+@{
+    ViewBag.Title = "Uye";
+    Layout = "~/Views/Shared/AdminSide.cshtml";
+}
+
+<h2 style="text-align: center; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; ">Üyeler</h2>
+<br />
+
+<div class="container">
+    <table class="table table-success table-striped  table-hover ms-1 ">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Üye Adı</th>
+                <th>Üye Soyadı</th>
+                <th>Üye Mail</th>
+                <th>Üye Kullanıcı Adı</th>
+                <th>Üye Şifre</th>
+                <th>Üye Telefon</th>
+                <th>Üye Bölüm</th>
+                <th>Sil</th>
+                <th>Güncelle</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var u in Model)
+            {
+                <tr>
+                    <th>@u.ID</th>
+                    <td>@u.Ad</td>
+                    <td>@u.Soyad</td>
+                    <td>@u.Mail</td>
+                    <td>@u.KullaniciAdi</td>
+                    <td>@u.Sifre</td>
+                    <td>@u.Telefon</td>
+                    <td>@u.Bolum</td>
+                    <td><a href="/AdminUye/UyeSil/@u.ID" class="btn btn-danger"><i class="fas fa-trash-alt"></i> Sil</a></td>
+                    <td><a href="/AdminUye/UyeGetir/@u.ID" class="btn btn-success"><i class="fas fa-pencil-alt"></i> Güncelle</a></td>
+
+                </tr>
+
+            }
+
+
+        </tbody>
+
+    </table>
+    <br />
+
+    @Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("Uye", new { sayfa }), new PagedListRenderOptions
+    {
+
+   LiElementClasses = new List<string>
+   { "page-link"}
+
+   })
+    @*bunu yapmak yerine yani   new { sayfa }) şu ifadeden sonrasını yapmak yerine
+    <link rel="stylesheet" href="~/Content/PagedList.css"> şu ifadeyi yani content içindeki pagedlist.css eklersek de sorun çözülür*@
+
+
+    <br />
+    <a href="/AdminUye/UyeEkle/" class="btn ms-1 mb-1 " style="background-color: #393E46; color:#fff;">Üye ekle</a>
+
+
+</div>
+

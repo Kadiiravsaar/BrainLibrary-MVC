@@ -1,0 +1,74 @@
+﻿@using BrainLibrary.Models.Entity
+@using PagedList
+@using PagedList.Mvc
+
+@model PagedList.IPagedList<Kitaplar>
+@{
+    ViewBag.Title = "Kitap";
+    Layout = "~/Views/Shared/AdminSide.cshtml";
+}
+
+<h2 style="text-align: center; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; ">Kitaplar</h2>
+
+<div class="container">
+    @using (Html.BeginForm("Kitap", "AdminKitap", FormMethod.Get))
+    {
+        <div class="mt-5 mb-5">
+            @Html.TextBox("f", null, new { placeholder = "Aranacak Kitap..", @class = "form-control" })
+            <button class="btn btn-info mt-3">Kitap Ara</button>
+        </div>
+
+    }
+</div>
+
+<div class="container">
+    <table class="table table-success table-striped  table-hover ms-1 ">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Kitap Adı</th>
+                <th>Kategorisi</th>
+                <th>Kitap Yazarı</th>
+                <th>Basım Yılı</th>
+                <th>Yayınevi</th>
+                <th>Sayfa Sayısı</th>
+                <th>Durum</th>
+                <th>Sil</th>
+                <th>Güncelle</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var ktp in Model)
+            {
+                <tr>
+                    <th>@ktp.ID</th>
+                    <td>@ktp.Ad</td>
+                    <td>@ktp.Kategoriler.Ad</td>
+                    <td>@ktp.Yazarlar.Ad&nbsp;@ktp.Yazarlar.Soyad</td>
+                    <td>@ktp.BasimYil</td>
+                    <td>@ktp.YayinEvi</td>
+                    <td>@ktp.Sayfa</td>
+                    <td>@ktp.Durum</td>
+                    <td><a href="/AdminKitap/KitapSil/@ktp.ID" class="btn btn-danger"><i class="fas fa-trash-alt"></i> Sil</a></td>
+                    <td><a href="/AdminKitap/KitapGetir/@ktp.ID" class="btn btn-success"><i class="fas fa-pencil-alt"></i> Güncelle</a></td>
+
+                </tr>
+
+            }
+
+
+        </tbody>
+
+    </table>
+    @Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("Kitap", new { sayfa }), new PagedListRenderOptions
+{
+
+LiElementClasses = new List<string>
+{ "page-link"}
+
+})
+    <br />
+    <a href="/AdminKitap/KitapEkle/" class="btn ms-1 mb-3 " style="background-color: #393E46; color:#fff;">Kitap ekle</a>
+
+</div>
+

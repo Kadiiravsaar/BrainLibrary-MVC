@@ -1,0 +1,41 @@
+﻿@using BrainLibrary.Models.Entity
+@model List<Personeller>
+@{
+    ViewBag.Title = "Personel";
+    Layout = "~/Views/Shared/AdminSide.cshtml";
+}
+
+<h2 style="text-align: center; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; ">Personeller</h2>
+<br />
+
+<div class="container">
+    <table class="table table-success table-striped  table-hover ms-1 ">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Personel Adı</th>
+                <th>Sil</th>
+                <th>Güncelle</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var prs in Model)
+            {
+                <tr>
+                    <th>@prs.ID</th>
+                    <td>@prs.Personel</td>
+                    <td><a href="/AdminPersonel/PersonelSil/@prs.ID" class="btn btn-danger"><i class="fas fa-trash-alt"></i> Sil</a></td>
+                    <td><a href="/AdminPersonel/PersonelGetir/@prs.ID" class="btn btn-success"><i class="fas fa-pencil-alt"></i> Güncelle</a></td>
+
+                </tr>
+
+            }
+
+
+        </tbody>
+
+    </table>
+    <a href="/AdminPersonel/PersonelEkle/" class="btn ms-1 " style="background-color: #393E46; color:#fff;">Yeni Personel ekle</a>
+
+</div>
+

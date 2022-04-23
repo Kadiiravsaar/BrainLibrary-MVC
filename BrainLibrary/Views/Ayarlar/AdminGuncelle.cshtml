@@ -1,0 +1,30 @@
+﻿@model BrainLibrary.Models.Entity.Adminler
+@{
+    ViewBag.Title = "AdminGuncelle";
+    Layout = "~/Views/Shared/AdminSide.cshtml";
+}
+
+<h2>AdminGuncelle</h2>
+
+@using (Html.BeginForm("AdminGuncelle", "Ayarlar", FormMethod.Post))
+{
+
+    <div class="form-group ms-2">
+        @Html.LabelFor(k => k.ID)
+        @Html.TextBoxFor(k => k.ID, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(k => k.Kullanici)
+        @Html.TextBoxFor(k => k.Kullanici, new { @class = "form-control" })
+                <br />
+        @Html.LabelFor(k => k.Sifre)
+        @Html.TextBoxFor(k => k.Sifre, new { @class = "form-control" })
+                <br />
+        @Html.LabelFor(k => k.Yetki)
+        @Html.TextBoxFor(k => k.Yetki, new { @class = "form-control" })
+    </div>
+    <div>
+        <button class="btn btn-warning ms-2 mt-2">Güncelle</button>
+    </div>
+
+}
+

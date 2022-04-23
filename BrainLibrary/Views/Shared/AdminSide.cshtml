@@ -1,0 +1,164 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="tr-TR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrainLibrary</title>
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="~/library/css/SideBar.css">
+    <link href="~/istatistik/css/stylee.css" rel="stylesheet" />
+
+    <style>
+        a {
+            text-decoration: none;
+        }
+
+        .cevrele .SideBar .pad {
+            padding-left: 0 !important;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="cevrele">
+
+        <div class="SideBar">
+            <div class="profile">
+                <h3>Kadir Avşar</h3>
+
+            </div>
+            <ul class="pad">
+
+                <li>
+                    <a href="/AdminKategori/Kategori/" class="active">
+                        <span class="icon">
+                            <i class="fa-solid fa-list"></i>
+                        </span>
+                        <span class="item"> Kategoriler</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/AdminKitap/Kitap/">
+                        <span class="icon"><i class="fas fa-book"></i></span>
+                        <span class="item">Kitaplar</span>
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="/AdminYazar/Yazar/">
+                        <span class="icon">
+                            <i class="fa-solid fa-feather-pointed"></i>
+                        </span>
+                        <span class="item">Yazarlar</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/AdminPersonel/Personel/">
+                        <span class="icon">
+                            <i class="fa-solid fa-user-injured"></i>
+                        </span>
+                        <span class="item">Personeller</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/AdminUye/Uye/">
+                        <span class="icon">
+                            <i class="fa-solid fa-user-friends"></i>
+                        </span>
+                        <span class="item">Üyeler</span>
+                    </a>
+                </li>
+                @if (User.IsInRole("A"))
+                {
+                    <li>
+                        <a href="/AdminOdunc/Oduncver/">
+                            <span class="icon">
+                                <i class="fas fa-arrow-alt-circle-right"></i>
+                            </span>
+                            <span class="item">Ödünç Ver</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/AdminOdunc/Odunc/">
+                            <span class="icon">
+                                <i class="fas fa-arrow-alt-circle-left"></i>
+                            </span>
+                            <span class="item">İade Al</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/Ayarlar/Ayarlar/">
+                            <span class="icon">
+                                <i class="fas fa-users-cog"></i>
+                            </span>
+                            <span class="item">Admin Ayarlar</span>
+                        </a>
+                    </li>
+                }
+                <li>
+                    <a href="/AdminIslem/Islem/">
+                        <span class="icon">
+                            <i class="fas fa-bars"></i>
+                        </span>
+                        <span class="item">İşlemler</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/AdminIstatistik/Istatistik/">
+                        <span class="icon">
+                            <i class="fas fa-chart-line"></i>
+                        </span>
+                        <span class="item">İstatistik</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/VitrinAnasayfa/V_anasayfa/">
+                        <span class="icon">
+                            <i class="fas fa-home"></i>
+                        </span>
+                        <span class="item"> Vitrin</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/Ayarlar/logOut/">
+                        <span class="icon">
+                            <i class="nav-icon fas fa-sign-out-alt"></i>
+                        </span>
+                        <span class="item">Çıkış yap</span>
+                    </a>
+                </li>
+
+
+
+            </ul>
+        </div>
+
+    </div>
+    <div class="main-content">
+        <div class="icerik">
+            <div class="container">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- Font Awesome -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js" integrity="sha512-yFjZbTYRCJodnuyGlsKamNE/LlEaEAxSUDe5+u61mV8zzqJVFOH7TnULE2/PP/l5vKWpUNnF4VGVkXh3MjgLsg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</body>
+</html>

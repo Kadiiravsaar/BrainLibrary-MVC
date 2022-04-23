@@ -1,0 +1,29 @@
+﻿@model BrainLibrary.Models.Entity.Yazarlar
+@{
+    ViewBag.Title = "YazarGetir";
+    Layout = "~/Views/Shared/AdminSide.cshtml";
+}
+
+@using (Html.BeginForm("YazarGuncelle", "AdminYazar", FormMethod.Post))
+{
+
+    <div class="form-group ms-2">
+        @Html.LabelFor(yzr => yzr.ID)
+        @Html.TextBoxFor(yzr => yzr.ID, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(yzr => yzr.Ad)
+        @Html.TextBoxFor(yzr => yzr.Ad, new { @class = "form-control" })
+         <br />
+        @Html.LabelFor(yzr => yzr.Soyad)
+        @Html.TextBoxFor(yzr => yzr.Soyad, new { @class = "form-control" })
+         <br />
+        @Html.LabelFor(yzr => yzr.Detay)
+        @Html.TextAreaFor(yzr => yzr.Detay, new { @class = "form-control" })
+        
+    </div>
+    <div>
+        <button class="btn btn-warning ms-2 mt-2">Güncelle</button>
+    </div>
+
+}
+

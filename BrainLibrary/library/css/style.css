@@ -1,0 +1,500 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+    text-decoration: none !important;
+    list-style: none !important;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.top-menu {
+    background-color: #393E46;
+}
+
+.top-menu i, .top-menu a {
+    color: white !important;
+}
+
+.top-menu i {
+    transition: .3s all;
+}
+
+.top-menu li:hover .t-icon {
+    color: #1da1f2 !important;
+}
+
+.top-menu li:hover .f-icon {
+    color: #1877f2 !important;
+}
+
+.top-menu li:hover .i-icon {
+    color: #c32aa3 !important;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    
+  }
+  
+  .sticky + .content {
+    padding-top: 60px;
+  }
+
+#navbar{
+    background-color: #222831;
+}
+
+#navbar .navbar-brand{
+    color: #fff !important;
+}
+
+.navbar-nav .nav-item .nav-link{
+    color: #fff !important;
+}
+.navbar-nav .nav-item .nav-link:hover{
+    color: #30d5c8 !important;
+}
+
+.social-icons, .user-login-control {
+    padding-left: 0 !important;
+    margin: 0 !important;
+}
+
+.user-login-control {
+    float: right;
+}
+
+.social-icons li, .user-login-control li {
+    display: inline-block;
+}
+
+.social-icons i {
+    font-size: 20px;
+}
+
+.main-image {
+    background-image: url(../img/caro3.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 70vh;
+}
+
+.py-manuel {
+    padding: 5rem 0;
+}
+
+.books-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: black;
+}
+
+.line {
+    position: relative;
+    margin-top: 30px;
+}
+
+.line hr {
+    height: 0px !important;
+    border: 0 !important;
+    border-bottom: 5px solid black !important;
+    width: 450px;
+    margin: 0 auto;
+    opacity: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+}
+
+#about{
+    background-color: #393E46  ;
+}
+#about .about-contect{
+    height: 350px;
+    padding-top: 50px;
+    padding-bottom: 40px;
+    text-align: center;
+}
+.books-title-hak {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: black  ;
+}
+.line .line-icon-hak {
+    font-size: 30px;
+    position: absolute;
+    background-color: #393E46;
+    padding: 0 15px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    z-index: 2;
+}
+/* Hak end*/
+
+/* about start*/
+#about-text {
+    margin-top: 5rem !important;
+    padding-bottom: 4rem;
+
+}
+#about-text .left {
+    float: left;
+    width: 50%;
+    padding-left: 1rem;
+    padding-right: 2rem;
+}
+#about-text .right{
+    float: right;
+    width: 50%;
+    padding-right: 1rem;
+    padding-left: 2rem;
+}
+#about-text{
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+}
+@media screen and (max-width:992px) {
+    #about-text .left,.right {
+        font-size: 14px;
+        padding-top: 5px;
+    }
+}
+
+@media screen and (max-width:576px) {
+    #about-text .left , .right {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width:480px) {
+    #about-text .left, .right {
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width:345px) {
+    #about-text .left ,.right {
+        font-size: 5px;
+    }
+}
+
+/* about end*/
+
+/* iletisim start*/
+
+
+
+
+.books-title-ilet {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: black  ;
+}
+.line .line-icon-ilet {
+    font-size: 30px;
+    position: absolute;
+    background-color: #fff;
+    padding: 0 15px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    z-index: 2;
+}
+
+
+.contact-form {
+    padding-top: 5rem;
+}
+
+.form-group{
+    border-bottom: 1px solid #e9ecef;
+    padding-bottom: 0.5rem;
+    margin-bottom: 3rem;
+}
+
+.contact-form{
+    width: 70%;
+    margin:0 auto;
+}
+
+.form-group input, textarea{
+    border:none;
+    width: 100%;
+    display: block;
+    font-size: 1.2rem;
+}
+.form-group input, textarea:focus{
+    outline: 0;
+}
+.gonder{
+    color: #fff;
+    background-color: #222831;
+}
+.gonder:hover{
+    color: #fff;
+    opacity: 0.9;
+
+}
+
+
+/*footer start*/
+.footer {
+ 
+    
+    
+    background-color: #222831;
+    width: 100%;
+    text-align: left;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 50px;
+    margin-top: 50px;
+ 
+  }
+  
+  
+  .footer .footer-left,
+  .footer .footer-center,
+  .footer .footer-right {
+    display: inline-block;
+    vertical-align: top;
+  }
+  
+  
+  /* footer left*/
+  
+  .footer .footer-left {
+    width: 33%;
+    padding-right: 15px;
+  }
+  
+  .footer .about {
+    line-height: 20px;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: normal;
+    margin: 0;
+  }
+  
+  .footer .about span {
+    display: block;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  
+  
+  
+  /* footer center*/
+  
+  .footer .footer-center {
+    width: 30%;
+  }
+  
+  .footer .footer-center i {
+    background-color: #33383b;
+    color: #ffffff;
+    font-size: 25px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 42px;
+    margin: 10px 15px;
+    vertical-align: middle;
+  }
+  
+  .footer .footer-center i.fa-envelope {
+    font-size: 17px;
+    line-height: 38px;
+  }
+
+  .footer .footer-center p {
+    display: inline-block;
+    color: #ffffff;
+    vertical-align: middle;
+    margin: 0;
+  }
+  
+  .footer .footer-center p span {
+    display: block;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 2;
+  }
+  
+  .footer .footer-center p a {
+    color: #0099ff;
+    text-decoration: none;
+  }
+
+  
+  
+  /* footer right*/
+  
+  .footer .footer-right {
+    width: 35%;
+  }
+  
+  .footer h2 {
+    color: #ffffff;
+    font-size: 36px;
+    font-weight: normal;
+    margin: 0;
+  }
+  
+  .footer h2 span {
+    color: #0099ff;
+  }
+  
+  .footer .menu {
+    color: #ffffff;
+    margin: 20px 0 12px;
+    padding: 0;
+  }
+  
+  .footer .menu a {
+    display: inline-block;
+    line-height: 1.8;
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .footer .menu a:hover {
+    color: #0099ff;
+  }
+  
+  .footer .name {
+    color: #fff;
+    font-size: 14px;
+    font-weight: normal;
+    margin: 0;
+  }
+  
+  @media (max-width: 767px) {
+    .footer {
+      font-size: 14px;
+    }
+    .footer .footer-left,
+    .footer .footer-center,
+    .footer .footer-right {
+      display: block;
+      width: 100%;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+    .footer .footer-center i {
+      margin-left: 0;
+    }
+  }
+
+
+/*footer END*/
+
+
+
+
+
+@media screen and (max-width:480px) {
+    .line hr {
+        width: 320px;
+    }
+}
+
+@media screen and (max-width:345px) {
+    .line hr {
+        width: 240px;
+    }
+}
+
+.line .line-icon {
+    font-size: 30px;
+    position: absolute;
+    background-color: white;
+    padding: 0 15px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    z-index: 2;
+}
+
+.img-fluid-manuel {
+    width: 100%;
+    height: auto;
+}
+
+.book-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.book-detail {
+    position: absolute;
+    bottom: -260px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, .8);
+    color: white;
+    padding: 20px 10px;
+    text-align: center;
+    transition: .3s all;
+}
+
+.book-detail p {
+    font-size: .8rem;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.book-box:hover .book-detail {
+    bottom: 0px;
+}
+
+.books .row .col-manuel {
+    flex: 0 0 auto;
+    width: 25%;
+}
+
+@media screen and (max-width:1200px) {
+    .books .row .col-manuel {
+        width: 33.33%;
+    }
+}
+
+@media screen and (max-width:992px) {
+    .books .row .col-manuel {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width:576px) {
+    .books .row .col-manuel {
+        width: 100%;
+    }
+}
+
+
+/* kitap1*/
+.bookimg{
+    text-align:center;
+}
+.booktext{
+   text-align: start;
+   margin-top: 70px;
+}
+
+
+

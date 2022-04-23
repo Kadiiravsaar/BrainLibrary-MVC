@@ -1,0 +1,63 @@
+﻿@using BrainLibrary.Models.Entity
+@using PagedList
+@using PagedList.Mvc
+
+@model PagedList.IPagedList<Yazarlar>
+@{
+    ViewBag.Title = "Yazar";
+    Layout = "~/Views/Shared/AdminSide.cshtml";
+}
+
+<h2 style="text-align:center;font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; ">Yazarlar</h2>
+<br />
+<div class="container">
+    <table class="table table-success table-striped  table-hover ms-1 ">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Yazar Adı</th>
+                <th>Yazar Soyadı</th>
+                <th>Yazar Detay</th>
+                <th>Sil</th>
+                <th>Güncelle</th>
+                <th>Yazarın Kitapları</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var yzr in Model)
+            {
+                <tr>
+                    <th>@yzr.ID</th>
+                    <td>@yzr.Ad</td>
+                    <td>@yzr.Soyad</td>
+                    <td>@yzr.Detay</td>
+
+                    <td>
+                        @Html.ActionLink("Sil", "YazarSil", new { id = yzr.ID },
+                   new { @class = "btn btn-danger", onclick = " return confirm('Silmek istiyor musunuz')" })
+                    </td>
+                    <td><a href="/AdminYazar/YazarGetir/@yzr.ID" class="btn btn-success"><i class="fas fa-pencil-alt"></i> Güncelle</a></td>
+                    <td><a href="/AdminYazar/YazarKitap/@yzr.ID" class="btn btn-primary"><i class="fas fa-book"></i> Kitaplar</a></td>
+
+                </tr>
+
+            }
+
+
+        </tbody>
+
+    </table>
+    @Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("Yazar", new { sayfa }), new PagedListRenderOptions
+  {
+
+ LiElementClasses = new List<string>
+ { "page-link"}
+
+ })
+<br />
+    <a href="/AdminYazar/YazarEkle/" class="btn ms-1 " style="background-color: #393E46; color:#fff;">Yazar ekle</a>
+
+</div>
+
+
+

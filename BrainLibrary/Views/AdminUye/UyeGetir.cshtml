@@ -1,0 +1,46 @@
+﻿@model BrainLibrary.Models.Entity.Uyeler
+@{
+    ViewBag.Title = "UyeGetir";
+    Layout = "~/Views/Shared/AdminSide.cshtml";
+}
+
+
+@using (Html.BeginForm("UyeGuncelle", "AdminUye", FormMethod.Post))
+{
+
+    <div class="form-group ms-2">
+        @Html.LabelFor(k => k.ID)
+        @Html.TextBoxFor(k => k.ID, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(k => k.Ad)
+        @Html.TextBoxFor(k => k.Ad, new { @class = "form-control" })
+          <br />
+        @Html.LabelFor(k => k.Soyad)
+        @Html.TextBoxFor(k => k.Soyad, new { @class = "form-control" })
+          <br />
+        @Html.LabelFor(k => k.Mail)
+        @Html.TextBoxFor(k => k.Mail, new { @class = "form-control" })
+          <br />
+        @Html.LabelFor(k => k.KullaniciAdi)
+        @Html.TextBoxFor(k => k.KullaniciAdi, new { @class = "form-control" })
+          <br />
+        @Html.LabelFor(k => k.Sifre)
+        @Html.TextBoxFor(k => k.Sifre, new { @class = "form-control" })
+          <br />
+        @Html.LabelFor(k => k.Fotograf)
+        @Html.TextBoxFor(k => k.Fotograf, new { @class = "form-control" })
+          <br />
+        @Html.LabelFor(k => k.Telefon)
+        @Html.TextBoxFor(k => k.Telefon, new { @class = "form-control" })
+          <br />
+        @Html.LabelFor(k => k.Bolum)
+        @Html.TextBoxFor(k => k.Bolum, new { @class = "form-control" })
+
+    </div>
+    <div>
+        <button class="btn btn-warning ms-2 mt-4 mb-4">Güncelle</button>
+    </div>
+
+}
+
+

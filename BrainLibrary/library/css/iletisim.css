@@ -1,0 +1,64 @@
+/*iletisim*/
+.map{
+    margin-top: 70px;
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+}
+
+.books-title-iletsm {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: black  ;
+    text-align: center;
+    margin-top: 50px;
+}
+.ilet{
+    text-align:center;
+}
+.butonilet{
+    padding: 10px 0;
+    color: #393E46;
+    border: 1px solid #393E46;
+    color: #fff;
+    width: 100%;
+    cursor: pointer;
+    background-color: #393E46;
+}
+
+.formlar{  
+
+    width: 90%;
+    max-width: 600px;
+    margin-top: 15px;
+}
+.input-group{
+    margin-bottom: 25px;
+    position: relative;
+}
+input , textarea{
+    width: 100%; 
+    padding: 10px;
+    outline: 0;
+    border: 1px solid #393E46;
+    color: black;
+
+    font-size: 14px;
+}
+label{
+    height: 100%;
+    position:absolute;
+    left: 0;
+    top: 0;
+    padding: 10px;
+    color: black;
+    cursor: text;
+    transition: 0.1s;
+}
+input:focus~label,
+input:focus~:valid,
+textarea:focus~label,
+textarea:focus~:valid
+{
+    top:-35px;
+    font-size: 14px;
+}

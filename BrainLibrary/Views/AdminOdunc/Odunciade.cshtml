@@ -1,0 +1,41 @@
+﻿@model BrainLibrary.Models.Entity.Hareketler
+
+@{
+    ViewBag.Title = "Odunciade";
+    Layout = "~/Views/Shared/AdminSide.cshtml";
+}
+
+@using (Html.BeginForm("OduncGuncelle", "AdminOdunc", FormMethod.Post))
+{
+
+    <div class="form-group ms-2">
+        <label>Hareket Id</label>
+        @Html.TextBoxFor(p => p.ID, new { @class = "form-control" })
+        <br />
+        <label>Kitap Adı</label>
+        @Html.TextBoxFor(p => p.Kitaplar.Ad, new { @class = "form-control" })
+         <br />
+        <label>Üye Adı</label>
+        @Html.TextBoxFor(p => p.Uyeler.Ad, new { @class = "form-control" })
+         <br />
+        <label>Personel Adı</label>
+        @Html.TextBoxFor(p => p.Personeller.Personel, new { @class = "form-control" })
+         <br />
+         <label>Kitap Alış Tarih.</label>
+         @Html.TextBoxFor(p => p.AlisTarih,"{0:dd.MM.yyyy}", new { @class = "form-control" })
+         <br />
+         <label>Normal İade Tarih</label>
+        @Html.TextBoxFor(p => p.IadeTarih,"{0:dd.MM.yyyy}", new { @class = "form-control" })
+         <br />
+        <label>Üyenin Getirdiği İade Tarih</label>
+         <input type="text" name="UyeGetirTarih" class="form-control mt-2 " value="@DateTime.Now.ToShortDateString()" />
+         <br />
+         <label>Geç gelen gün sayısı</label>
+         <input type="text" class="form-control" value="@ViewBag.deger" id="Gecinpput" />
+    </div>
+    <div>
+        <button class="btn btn-warning ms-2 mt-4">Ödünç Kitabı Geri Al</button>
+    </div>
+}
+
+

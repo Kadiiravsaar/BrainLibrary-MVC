@@ -1,0 +1,43 @@
+﻿@using BrainLibrary.Models.Entity
+@model List<Kategoriler>
+@{
+    ViewBag.Title = "Kategori";
+    Layout = "~/Views/Shared/AdminSide.cshtml";
+}
+
+<h2 style="text-align: center; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; ">Kategoriler</h2>
+<br />
+
+<div class="container">
+    <table class="table table-success table-striped  table-hover ms-1 ">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Kategori Adı</th>
+                <th>Sil</th>
+                <th>Güncelle</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var ktgr in Model)
+            {
+                <tr>
+                    <th>@ktgr.ID</th>
+                    <td>@ktgr.Ad</td>
+                    <td><a href="/AdminKategori/KategoriSil/@ktgr.ID" class="btn btn-danger"> <i class="fas fa-trash-alt"></i> Sil</a></td>
+                    <td><a href="/AdminKategori/KategoriGetir/@ktgr.ID" class="btn btn-success"><i class="fas fa-pencil-alt"></i> Güncelle</a></td>
+
+                </tr>
+
+            }
+
+
+        </tbody>
+
+    </table>
+    <a href="/AdminKategori/KategoriEkle/" class="btn ms-1 mb-4 " style="background-color: #393E46; color:#fff;">Kategori ekle</a>
+
+</div>
+
+
+

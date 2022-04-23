@@ -1,0 +1,22 @@
+﻿@model BrainLibrary.Models.Entity.Personeller
+@{
+    ViewBag.Title = "PersonelGetir";
+    Layout = "~/Views/Shared/AdminSide.cshtml";
+}
+
+@using (Html.BeginForm("PersonelGuncelle", "AdminPersonel", FormMethod.Post))
+{
+
+    <div class="form-group ms-2">
+        @Html.LabelFor(p => p.ID)
+        @Html.TextBoxFor(p => p.ID, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(p => p.Personel)
+        @Html.TextBoxFor(p => p.Personel, new { @class = "form-control" })
+    </div>
+    <div>
+        <button class="btn btn-warning ms-2 mt-2">Güncelle</button>
+    </div>
+}
+
+

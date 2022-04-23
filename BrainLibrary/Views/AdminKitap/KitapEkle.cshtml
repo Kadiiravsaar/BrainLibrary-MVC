@@ -1,0 +1,45 @@
+﻿@model BrainLibrary.Models.Entity.Kitaplar
+
+@{
+    ViewBag.Title = "KitapEkle";
+    Layout = "~/Views/Shared/AdminSide.cshtml";
+}
+
+<h2 style="text-align:center;font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; ">Kitap Ekleme Paneli</h2>
+<br />
+
+<form method="post" class="form-group ms-2">
+    <div></div>
+    <div>
+        <label class="mt-2">Kitap Adı</label>
+        <input type="text" name="Ad" class="form-control mt-2 " />
+    </div>
+    <div>
+        <label class="mt-2">Kategorisi</label>
+        @Html.DropDownListFor(k => k.Kategoriler.ID, (List<SelectListItem>)ViewBag.ctgry1, new { @class = "form-control" })
+    </div>
+    <div>
+        <label class="mt-2">Kitap Yazarı</label>
+        @Html.DropDownListFor(k => k.Yazarlar.ID, (List<SelectListItem>)ViewBag.wrtr1, new { @class = "form-control" })
+
+    </div>
+    <div>
+        <label class="mt-2">Basım Yılı</label>
+        <input type="text" name="BasimYil" class="form-control mt-2 " />
+    </div>
+    <div>
+        <label class="mt-2">Yayınevi</label>
+        <input type="text" name="YayinEvi" class="form-control mt-2 " />
+    </div>
+    <div>
+        <label class="mt-2">Sayfa Sayısı</label>
+        <input type="text" name="Sayfa" class="form-control mt-2 " />
+    </div>
+
+
+    <div style="margin-top:15px;">
+        <button class="btn " style="background-color: #393E46; color:#fff;margin-bottom:70px;">Kitap Ekle</button>
+    </div>
+    <input type="hidden" name="Durum" value="True" />
+</form>
+
